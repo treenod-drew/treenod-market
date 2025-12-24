@@ -49,9 +49,9 @@ flowchart LR
     end
 
     subgraph User
-        D --> E[/plugin marketplace update]
-        E --> F[/plugin install or update]
-        F --> G[~/.claude/plugins/]
+        D --> E["plugin marketplace update"]
+        E --> F["plugin install or update"]
+        F --> G["~/.claude/plugins/"]
     end
 ```
 
@@ -172,10 +172,10 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    A[/plugin install] --> B[~/.claude/plugins/]
+    A["plugin install"] --> B["~/.claude/plugins/"]
     B --> C[Available in all projects]
 
-    D[Project .claude/plugins/] --> E[Override for specific project]
+    D["Project .claude/plugins/"] --> E[Override for specific project]
     E --> F[Higher priority than user scope]
 ```
 
