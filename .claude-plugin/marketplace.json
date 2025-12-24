@@ -1,0 +1,71 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "treenod-plugins",
+  "description": "Internal Claude Code plugins for Treenod organization",
+  "owner": {
+    "name": "Treenod",
+    "email": "dev@treenod.com"
+  },
+  "plugins": [
+    {
+      "name": "atlassian",
+      "description": "Read and update Confluence pages and Jira issues via REST APIs with automatic ADF to Markdown conversion",
+      "version": "1.0.0",
+      "author": {
+        "name": "Treenod Dev Team",
+        "email": "dev@treenod.com"
+      },
+      "source": "./plugins/atlassian",
+      "category": "productivity",
+      "tags": ["confluence", "jira", "documentation"]
+    },
+    {
+      "name": "document-hoarder",
+      "description": "Fetch and organize Confluence documentation into local markdown files",
+      "version": "1.0.0",
+      "author": {
+        "name": "Treenod Dev Team",
+        "email": "dev@treenod.com"
+      },
+      "source": "./plugins/document-hoarder",
+      "category": "productivity",
+      "tags": ["confluence", "documentation"]
+    },
+    {
+      "name": "sheet",
+      "description": "Read, update, and format Google Sheets spreadsheets via API",
+      "version": "1.0.0",
+      "author": {
+        "name": "Treenod Dev Team",
+        "email": "dev@treenod.com"
+      },
+      "source": "./plugins/sheet",
+      "category": "productivity",
+      "tags": ["google-sheets", "spreadsheet", "api"]
+    },
+    {
+      "name": "skill-creator",
+      "description": "Guide for creating effective skills that extend Claude's capabilities",
+      "version": "1.0.0",
+      "author": {
+        "name": "Treenod Dev Team",
+        "email": "dev@treenod.com"
+      },
+      "source": "./plugins/skill-creator",
+      "category": "development",
+      "tags": ["skill", "development", "guide"]
+    },
+    {
+      "name": "sql-writer",
+      "description": "Write and validate Databricks SQL queries for game analytics including retention, funnel, and DAU metrics",
+      "version": "1.0.0",
+      "author": {
+        "name": "Treenod Dev Team",
+        "email": "dev@treenod.com"
+      },
+      "source": "./plugins/sql-writer",
+      "category": "data",
+      "tags": ["databricks", "sql", "analytics"]
+    }
+  ]
+}

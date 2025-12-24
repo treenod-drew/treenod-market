@@ -1,0 +1,34 @@
+{
+  "parentType": "page",
+  "parentId": "73284288735",
+  "ownerId": "712020:c45463ed-cb84-40b6-adc8-72f6958d74a3",
+  "lastOwnerId": null,
+  "createdAt": "2025-12-09T01:31:16.013Z",
+  "authorId": "712020:c45463ed-cb84-40b6-adc8-72f6958d74a3",
+  "position": 2064,
+  "version": {
+    "number": 1,
+    "message": "",
+    "minorEdit": false,
+    "authorId": "712020:c45463ed-cb84-40b6-adc8-72f6958d74a3",
+    "createdAt": "2025-12-09T01:32:26.916Z",
+    "ncsStepVersion": "65"
+  },
+  "id": "73294938154",
+  "spaceId": "73284288612",
+  "body": {
+    "atlas_doc_format": {
+      "representation": "atlas_doc_format",
+      "value": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"localId\":\"de56d4fd-1eb4-451b-bdf0-613439d89e23\"},\"content\":[{\"text\":\"head32\",\"type\":\"text\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":3,\"localId\":\"6c8d4056-0f79-4060-a494-06ba54044615\"},\"content\":[{\"text\":\"head 3\",\"type\":\"text\"}]},{\"type\":\"bulletList\",\"attrs\":{\"localId\":\"a5e0ae43-1ec1-4d09-817c-2091b62bc26b\"},\"content\":[{\"type\":\"listItem\",\"attrs\":{\"localId\":\"ae2cd218-41fd-45ac-84d3-2ee510abcb40\"},\"content\":[{\"type\":\"paragraph\",\"attrs\":{\"localId\":\"68fdc893-023d-44a6-b186-3b70e1082eeb\"},\"content\":[{\"text\":\"bullet\",\"type\":\"text\"}]},{\"type\":\"bulletList\",\"attrs\":{\"localId\":\"7c165948-90de-470e-bff5-bd7c24d56c48\"},\"content\":[{\"type\":\"listItem\",\"attrs\":{\"localId\":\"9f0a3ccc-b256-47c9-9f1e-c53a8cdc9fb9\"},\"content\":[{\"type\":\"paragraph\",\"attrs\":{\"localId\":\"64c08590-4467-4ae2-a759-6e506a2329d4\"},\"content\":[{\"text\":\"depth 2 bullet\",\"type\":\"text\"}]}]}]}]}]},{\"type\":\"paragraph\",\"attrs\":{\"localId\":\"8cba5816-d744-478e-9dcf-3e39a82c94fb\"}},{\"type\":\"codeBlock\",\"attrs\":{\"localId\":\"0f01a80e-de48-4356-ba48-6bca5fe02bd7\"},\"marks\":[{\"type\":\"breakout\",\"attrs\":{\"mode\":\"wide\",\"width\":760}}],\"content\":[{\"text\":\"code block\",\"type\":\"text\"}]},{\"type\":\"paragraph\",\"attrs\":{\"localId\":\"52ddedbc-c76f-4587-97e1-800faa7fe8ce\"}},{\"type\":\"paragraph\",\"attrs\":{\"localId\":\"2b92f371-61e4-4db0-b5e9-eb3cbc3ad0cf\"}}],\"version\":1}"
+    }
+  },
+  "status": "current",
+  "title": "test",
+  "_links": {
+    "editui": "/pages/resumedraft.action?draftId=73294938154",
+    "webui": "/spaces/~712020c45463edcb8440b6adc872f6958d74a3/pages/73294938154/test",
+    "edituiv2": "/spaces/~712020c45463edcb8440b6adc872f6958d74a3/pages/edit-v2/73294938154",
+    "tinyui": "/x/KgC4EBE",
+    "base": "https://treenod.atlassian.net/wiki"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "document-hoarder",
+  "description": "Fetch and organize Confluence documentation into local markdown files",
+  "author": {
+    "name": "Treenod Dev Team",
+    "email": "dev@treenod.com"
+  }
+}

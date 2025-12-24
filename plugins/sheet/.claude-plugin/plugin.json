@@ -1,0 +1,8 @@
+{
+  "name": "sheet",
+  "description": "Read, update, and format Google Sheets spreadsheets via API. Use when users need to (1) Read cell data from spreadsheets, (2) Update cell values, (3) Append rows to sheets, (4) Format cells (background color, borders, text style), (5) Create pivot tables, or (6) Export data to JSON/CSV format.",
+  "author": {
+    "name": "Treenod Dev Team",
+    "email": "dev@treenod.com"
+  }
+}

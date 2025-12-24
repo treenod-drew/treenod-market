@@ -1,0 +1,8 @@
+{
+  "name": "atlassian",
+  "description": "Read and update Confluence pages and Jira issues via REST APIs with automatic ADF to Markdown conversion",
+  "author": {
+    "name": "Treenod Dev Team",
+    "email": "dev@treenod.com"
+  }
+}
