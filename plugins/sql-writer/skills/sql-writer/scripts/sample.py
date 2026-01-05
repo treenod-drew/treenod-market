@@ -62,6 +62,11 @@ def add_limit(sql: str, limit: int) -> str:
     sql_stripped = sql.strip().rstrip(";")
     sql_upper = sql_stripped.upper()
 
+    # Skip LIMIT for commands that don't support it
+    no_limit_commands = ["DESCRIBE", "SHOW", "EXPLAIN"]
+    if any(sql_upper.startswith(cmd) for cmd in no_limit_commands):
+        return sql_stripped
+
     # Check if LIMIT already exists
     if "LIMIT" in sql_upper:
         # Replace existing limit if it's larger

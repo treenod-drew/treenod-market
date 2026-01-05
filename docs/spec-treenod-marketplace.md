@@ -307,6 +307,42 @@ Documentation content...
 | Version conflicts | Semantic versioning, changelog |
 | Path issues | Use relative paths, test after migration |
 
+## Bug Fix History
+
+### sql-writer v1.0.1 (2026-01-05)
+
+#### Issue
+`sample.py` added LIMIT clause to all queries, causing syntax errors for DESCRIBE/SHOW/EXPLAIN commands.
+
+```sql
+-- Failed query
+DESCRIBE DETAIL global.litemeta_production.stageclose LIMIT 10
+-- Error: Syntax error at or near 'LIMIT'
+```
+
+#### Root Cause
+The `add_limit()` function in `sample.py` unconditionally appended LIMIT to all SQL statements, but DESCRIBE/SHOW/EXPLAIN commands do not support LIMIT clause.
+
+#### Fix
+Added check to skip LIMIT for unsupported commands:
+
+```python
+def add_limit(sql: str, limit: int) -> str:
+    sql_stripped = sql.strip().rstrip(";")
+    sql_upper = sql_stripped.upper()
+
+    # Skip LIMIT for commands that don't support it
+    no_limit_commands = ["DESCRIBE", "SHOW", "EXPLAIN"]
+    if any(sql_upper.startswith(cmd) for cmd in no_limit_commands):
+        return sql_stripped
+    # ... rest of function
+```
+
+#### Files Changed
+- `plugins/sql-writer/skills/sql-writer/scripts/sample.py`
+- `.claude-plugin/marketplace.json` (version bump)
+- `plugins/sql-writer/CHANGELOG.md` (created)
+
 ## Timeline Estimate
 
 | Phase | Tasks |
