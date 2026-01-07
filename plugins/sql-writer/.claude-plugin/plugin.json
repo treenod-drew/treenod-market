@@ -1,8 +1,0 @@
-{
-  "name": "sql-writer",
-  "description": "Write and validate Databricks SQL queries for game analytics including retention, funnel, and DAU metrics",
-  "author": {
-    "name": "Treenod Dev Team",
-    "email": "dev@treenod.com"
-  }
-}

@@ -5,13 +5,14 @@ This is the source of truth for Treenod Claude Code plugins.
 ### Structure
 
 ```
-plugins/<name>/
+plugins/util/
 ├── .claude-plugin/plugin.json    # Plugin manifest
-└── skills/<name>/
-    ├── SKILL.md                  # Skill definition
-    ├── scripts/                  # Python scripts
-    ├── references/               # Reference docs
-    └── templates/                # SQL/code templates
+└── skills/
+    ├── atlassian/                # Confluence and Jira API integration
+    ├── document-hoarder/         # Confluence documentation fetcher
+    ├── sheet/                    # Google Sheets API integration
+    ├── skill-creator/            # Guide for creating Claude Code skills
+    └── sql-writer/               # Databricks SQL query generator
 ```
 
 ### Development Workflow (Maintainer)
@@ -24,14 +25,14 @@ plugins/<name>/
 
 ```bash
 /plugin marketplace add treenod/treenod-claude-plugins
-/plugin install <name>@treenod-plugins
-/plugin update <name>@treenod-plugins
+/plugin install util@treenod-plugins
+/plugin update util@treenod-plugins
 ```
 
-### Available Plugins
+### Available Skills
 
-| Plugin | Description |
-|--------|-------------|
+| Skill | Description |
+|-------|-------------|
 | atlassian | Confluence and Jira API integration |
 | document-hoarder | Confluence documentation fetcher |
 | sheet | Google Sheets API integration |
