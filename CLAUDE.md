@@ -19,7 +19,10 @@ plugins/util/
 
 1. Edit plugin files directly in this repo
 2. Test: skills are loaded when Claude Code runs here
-3. Commit and push to distribute to team
+3. Update version in both files (semantic versioning):
+   - `plugins/util/.claude-plugin/plugin.json`
+   - `.claude-plugin/marketplace.json`
+4. Commit and push to distribute to team
 
 ### Distribution (Team Members)
 

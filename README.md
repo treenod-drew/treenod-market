@@ -112,7 +112,9 @@ EOF
 
 ```bash
 # 1. 스킬 파일 수정
-# 2. CHANGELOG.md 업데이트 (있는 경우)
+# 2. 버전 업데이트 (두 파일 모두 수정 필요)
+#    - plugins/util/.claude-plugin/plugin.json
+#    - .claude-plugin/marketplace.json
 # 3. 로컬 테스트
 # 4. Commit and push
 ```
