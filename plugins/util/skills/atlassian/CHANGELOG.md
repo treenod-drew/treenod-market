@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.0] - 2025-01-13
+
+### Changed
+
+- `confluence_api.py update` now auto-detects `.html` files
+  - Automatically delegates to `marimo_converter.py` for HTML files
+  - Same command works for both markdown and marimo HTML exports
+  - Fixes issue where HTML files were uploaded as raw text instead of converted
+
+### Fixed
+
+- Fixed circular import by using local import for `marimo_converter`
+
 ## [0.6.0] - 2025-01-13
 
 ### Added

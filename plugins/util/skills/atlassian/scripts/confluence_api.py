@@ -219,11 +219,11 @@ def update_confluence_page(
     title: str = None
 ) -> dict:
     """
-    Update Confluence page from markdown file.
+    Update Confluence page from markdown or HTML file.
 
     Args:
         page_id: Confluence page ID
-        markdown_file: Path to markdown file
+        markdown_file: Path to markdown file or marimo HTML export
         title: Optional new title (uses existing if None)
 
     Returns:
@@ -231,14 +231,26 @@ def update_confluence_page(
 
     Process:
         1. Read current page to get version
-        2. Load markdown from file
+        2. Load markdown from file (or convert HTML)
         3. Convert markdown to ADF
         4. Update page with new content
+
+    Note:
+        For .html files (marimo exports), delegates to marimo_converter.
 
     Raises:
         requests.HTTPError: If API request fails
         FileNotFoundError: If markdown file doesn't exist
     """
+    # Handle HTML files (marimo exports)
+    if markdown_file.endswith('.html'):
+        from marimo_converter import convert_marimo_html
+        return convert_marimo_html(
+            html_file=markdown_file,
+            page_id=page_id,
+            title=title
+        )
+
     confluence_url, _ = get_base_urls()
     headers = get_auth_headers()
 
