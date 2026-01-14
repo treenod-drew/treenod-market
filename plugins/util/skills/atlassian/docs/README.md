@@ -9,6 +9,7 @@ title: Atlassian Skill Documentation
 | [implementation.md](spec/implementation.md) | Core implementation spec for all modules |
 | [adf-converter.md](spec/adf-converter.md) | ADF converter improvements |
 | [marimo-html-to-adf.md](spec/marimo-html-to-adf.md) | Marimo HTML to ADF conversion |
+| [adf-spacing.md](spec/adf-spacing.md) | ADF spacing for Confluence rendering |
 
 ## Research
 

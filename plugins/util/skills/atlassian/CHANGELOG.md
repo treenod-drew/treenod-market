@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.9.0] - 2025-01-14
+
+### Added
+
+- ADF spacing for better Confluence rendering
+  - Added `add_spacing_before_blocks()` function to both converters
+  - Inserts empty paragraph before horizontal rules (`---`) and h2-h4 headings
+  - Improves visual separation in Confluence pages with cramped default line-height
+
+### Changed
+
+- `adf_converter.py`: `markdown_to_adf()` now applies spacing post-processing
+- `html_to_adf.py`: `html_to_adf()` now applies spacing post-processing
+
+### Documentation
+
+- Added `docs/spec/adf-spacing.md` specification
+
 ## [0.8.0] - 2026-01-13
 
 ### Fixed

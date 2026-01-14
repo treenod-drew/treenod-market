@@ -6,6 +6,39 @@ import json
 from lxml import html
 
 
+def add_spacing_before_blocks(content: list) -> list:
+    """
+    Add empty paragraph before rule and heading nodes for visual spacing.
+
+    Confluence pages have cramped default line-height. Adding empty paragraphs
+    before horizontal rules and h2-h4 headings improves visual separation.
+
+    Args:
+        content: List of ADF content nodes
+
+    Returns:
+        list: Content with spacing paragraphs inserted
+    """
+    result = []
+
+    for i, node in enumerate(content):
+        node_type = node.get("type")
+
+        # Add spacing before rule (but not at document start)
+        if node_type == "rule" and i > 0:
+            result.append({"type": "paragraph", "content": []})
+
+        # Add spacing before h2-h4 headings (but not at document start)
+        if node_type == "heading" and i > 0:
+            level = node.get("attrs", {}).get("level", 1)
+            if level >= 2:
+                result.append({"type": "paragraph", "content": []})
+
+        result.append(node)
+
+    return result
+
+
 def html_to_adf(html_content: str) -> list:
     """
     Convert HTML content to ADF nodes.
@@ -38,6 +71,9 @@ def html_to_adf(html_content: str) -> list:
         node = convert_element_to_adf(elem)
         if node:
             nodes.append(node)
+
+    # Add spacing for better Confluence rendering
+    nodes = add_spacing_before_blocks(nodes)
 
     return nodes
 
