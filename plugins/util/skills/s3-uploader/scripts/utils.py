@@ -43,11 +43,16 @@ def load_aws_credentials_from_claude_settings():
 
     # WSL can also access Windows settings
     if 'microsoft' in os.uname().release.lower():
-        # Try Windows path from WSL: /mnt/c/Users/<user>/.claude/settings.json
+        # Try multiple common Windows user directories
         try:
-            windows_user = os.environ.get('USER', 'User')
-            wsl_windows_path = Path(f'/mnt/c/Users/{windows_user}/.claude/settings.json')
-            settings_paths.append(wsl_windows_path)
+            # Try to find all user directories in /mnt/c/Users/
+            users_dir = Path('/mnt/c/Users')
+            if users_dir.exists():
+                for user_dir in users_dir.iterdir():
+                    if user_dir.is_dir():
+                        claude_settings = user_dir / '.claude' / 'settings.json'
+                        if claude_settings.exists():
+                            settings_paths.append(claude_settings)
         except:
             pass
 
@@ -59,7 +64,8 @@ def load_aws_credentials_from_claude_settings():
                     settings = json.load(f)
 
                     # Extract AWS credentials from environment variables
-                    env_vars = settings.get('environmentVariables', {})
+                    # Support both 'env' and 'environmentVariables' keys
+                    env_vars = settings.get('environmentVariables') or settings.get('env', {})
                     access_key = env_vars.get('AWS_ACCESS_KEY_ID')
                     secret_key = env_vars.get('AWS_SECRET_ACCESS_KEY')
 
